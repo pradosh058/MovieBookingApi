@@ -22,19 +22,17 @@ public class controller {
 	
 	@GetMapping("/movies")
 	public List<Movie> getTodo(){
-		
 		return movieService.getMovies();
 		
 	}
+	
 	@GetMapping("/movie/{id}")
 	public Movie getSingleMovie(@PathVariable String id) {
-		
 		return movieService.getMovie(id);
 	}
 	
 	@PostMapping("/movie")
 	public void addMovies(@Valid @RequestBody Movie movie, BindingResult bindingResult) {
-		
 		if(bindingResult.hasErrors()) {
 			throw new RuntimeException("Request Not Valid");
 		}
@@ -51,5 +49,4 @@ public class controller {
 	public void deleteTodo(@PathVariable String id) {
 		movieService.deleteMovie(id);
 	}
-	
 }
