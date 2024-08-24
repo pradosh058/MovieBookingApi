@@ -23,7 +23,6 @@ public class controller {
 	@GetMapping("/movies")
 	public List<Movie> getTodo(){
 		return movieService.getMovies();
-		
 	}
 	
 	@GetMapping("/movie/{id}")
